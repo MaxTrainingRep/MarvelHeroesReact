@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import useMarvelService from '../../services/MarvelService';
 import ErrorMessage from '../errorMessage/ErrorMessage';
@@ -83,9 +84,9 @@ const View = ({char}) => {
                         // eslint-disable-next-line
                         if (i > 9) return;
                         return (
-                            <li key={i} className="char__comics-item">
+                            <Link to={item.resourceURI.substring(35)} key={i} className="char__comics-item">
                                 {item.name}
-                            </li>
+                            </Link>
                         )
                     })
                 }                
